@@ -1,0 +1,292 @@
+*{
+	box-sizing: border-box;
+	font-family: sans-serif;
+
+}
+
+.alignCol{
+	font-size: 0;
+}
+
+.alignCol > * {
+	font-size: medium;
+}
+
+
+#container{
+	max-width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}	
+
+img{
+	max-width: 100%;
+}
+
+.shirt-box{
+	width: 33%;
+	display: inline-block;
+	padding: 2%;
+}
+
+.image-container{
+	position: relative;
+	border: solid #55a4dd;
+	border-width: 2px 2px 0 2px;
+	padding: 10%;
+	perspective: 700;
+}
+
+.flip-button{
+	position: absolute;
+	right: 0;
+	top: 0;
+	transform: scale(2.3);
+	-webkit-transform: scale(2.3);
+	color: transparent;
+	opacity: 0;
+	z-index: 2;
+}
+
+.image-container i{
+	position: absolute;
+	right: 0;
+	top: 0;
+	border: solid #55a4dd;
+	border-width: 2px 0 0 2px;
+	padding: 1%;
+	color: #55a4dd;
+}
+
+.icon-container{
+	width: 100%;
+}
+
+
+.shirt-box > div:nth-child(2){
+	border: 2px solid #55a4dd;
+}
+
+.icon-box{
+	position: relative;
+	width: 20%;
+	display: inline-block;
+	color: #55a4dd;
+	border-right: 2px solid #55a4dd;
+	vertical-align: top;
+}
+
+.shirt-box > div:nth-child(2) > div:last-child {
+	border-right: 0px solid #55a4dd;
+}
+
+/*Centering icons*/
+.centered{
+	text-align: center;
+	margin: auto;
+	padding-top: 15%;
+	padding-bottom: 15%; 
+}
+
+/*Size box*/
+.size-box{
+	position: absolute;
+	width: 130%;
+	right: 0;
+	bottom: 100%;
+	background-color: white;
+	border: 2px solid #55a4dd;
+	padding-top: 10%;
+	padding-bottom: 10%;
+	opacity: 0;
+	margin-bottom:10px;
+	margin-right: -15%;
+}
+.size-box div{
+	margin: 15% auto;
+}
+
+/*Color options box*/
+.color-box{
+	position: absolute;
+	width: 130%;
+	right: 0;
+	bottom: 100%;
+	background-color: white;
+	border: 2px solid #55a4dd;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	opacity: 0;
+	margin-bottom:10px;
+	margin-right: -15%;
+}
+
+.colors{
+	display: :inline-block;
+	text-align: center;
+	margin: 15% auto;
+}
+
+/*color-size box arrows*/
+.color-box:before, .color-box:after, .size-box:before, .size-box:after{
+	height: 0;
+	width: 0;
+	content: ' ';
+	border: solid transparent;
+	position:absolute;
+	right: 50%;
+	top: 100%;
+}
+.color-box:after, .size-box:after{
+	border-top: 7px solid #fff;
+	border-right: 7px solid transparent;
+	border-left: 7px solid transparent;
+	margin-right: -7px;
+	
+}
+.color-box:before, .size-box:before{
+	border-top: 9px solid #55a4dd;
+	border-right: 9px solid transparent;
+	border-left: 9px solid transparent;
+	margin-right: -9px;
+}
+/*color-size box arrows ends*/
+
+
+.label-container{
+	width: 100%;
+}
+p {
+	font-family: helvetica, arial, sans-serif;
+	color: #55a4dd;
+	font-weight: 400;
+	font-size: 1em;
+}
+ .product-name{
+	width: 50%;
+	display: inline-block;
+	color: #55a4dd;
+	font-weight: 400;
+}
+
+.product-price{
+	width: 50%;
+	display: inline-block;
+	color: #55a4dd;
+	font-weight: 800;
+	text-align: right;
+} 
+
+/*Responsive Design*/
+
+/*tablet size response (iPad)*/
+@media screen and (max-width: 769px){
+	.shirt-box:last-child{
+		display: block;
+	}
+	.shirt-box{
+		width: 49%;
+		margin-left: 0.5%;
+	}
+}
+
+/*phone size response (iPhone 6 Plus)*/
+@media screen and (max-width: 415px){
+	.shirt-box{
+		width: 100%;
+		display: block;
+	}
+}
+
+/*Pseudo Elements*/
+
+/*icon boxes hover effect*/
+.centered:hover{
+	 background-color: #55a4dd;
+	 color: white;
+}
+
+/*flip button hover effect*/
+.fa-share:hover{
+	background-color: #55a4dd;
+	color: white;
+}
+
+input[type="checkbox"]:hover ~ i{
+	background-color: #55a4dd;
+	color: white;
+}
+
+/*changes cursor to pointer when hover on flip button*/
+input[type="checkbox"]:hover {
+	cursor: pointer;
+}
+
+/*color option box drop down effect*/
+.icon-box + div:hover .color-box{
+	opacity: 1;
+	margin-bottom: 0;
+}
+
+/*color option box hover effecr*/
+.icon-box:nth-child(4):hover i{
+	color: #55a4dd;
+	border: 3px solid white;
+	margin: -3px;
+}
+
+/*size option box drop down effect*/
+.icon-box:nth-child(3):hover .size-box{
+	opacity: 1;
+	margin-bottom: 0;
+	color: #55a4dd;
+	font-family: helvetica, sans-serif;
+}
+
+.flip3D:hover .image-front{
+		transform: perspective(1000px) rotateY( -180deg);
+		-webkit-transform: perspective(1000px) rotateY( -180deg);
+}
+.flip3D:hover > .image-back{
+		transform: perspective(1000px) rotateY( -0deg);
+		-webkit-transform: perspective(1000px) rotateY( -0deg);
+}
+
+input[type="checkbox"]:checked + div > div:last-child{
+		transform: perspective(1000px) rotateY( -180deg);
+		-webkit-transform: perspective(1000px) rotateY( -180deg);
+}
+input[type="checkbox"]:checked + div > div:first-child{
+		transform: perspective(1000px) rotateY( -0deg);
+		-webkit-transform: perspective(1000px) rotateY( -0deg);
+}
+
+/*Transitions*/
+.color-box, .size-box{
+	transition: 1.5s opacity ease-in;
+	transition: 0.3s margin-bottom ease-out;
+}
+
+.flip3D{
+	position: relative;
+	transition: all 0.5s linear 0s;
+	transform-style: preserve-3d;
+}
+
+.flip3D > .image-front{
+	/*position: absolute;*/
+	-webkit-transform: rotateY( 0deg );
+	transform: rotateY( 0deg );
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: -webkit-transform 0.5s linear 0s;
+}
+
+.flip3D > .image-back{
+	position: absolute;
+	-webkit-transform: rotateY( 180deg);
+	transform: rotateY( 180deg );
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: -webkit-transform 0.5s linear 0s;
+}
