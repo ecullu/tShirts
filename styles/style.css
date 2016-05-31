@@ -243,14 +243,14 @@ input[type="checkbox"]:hover {
 	font-family: helvetica, sans-serif;
 }
 
-.flip3D:hover .image-front{
+/*.flip3D:hover .image-front{
 		transform: perspective(1000px) rotateY( -180deg);
 		-webkit-transform: perspective(1000px) rotateY( -180deg);
 }
 .flip3D:hover > .image-back{
 		transform: perspective(1000px) rotateY( -0deg);
 		-webkit-transform: perspective(1000px) rotateY( -0deg);
-}
+}*/
 
 input[type="checkbox"]:checked + div > div:last-child{
 		transform: perspective(1000px) rotateY( -180deg);
